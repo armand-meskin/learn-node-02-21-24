@@ -1,3 +1,10 @@
 - Explain the order of execution in terms of the event loop for eventloop/poll_timer.js.
 - Will the order of execution change if the delay in the while loop is changed from 10s to 150s? Why or why not?
 - Will the order of execution change if timeout is changed to 0? Why or why not?
+
+- It will read the text file before executing the passed callback function. Afterwards it will run the timout func
+
+- Increasing the timout from 10 to 150 will not change the order of execution because the read file's callback is already happening at that time
+
+- if we change the timeout to 0 ms when the async func is called the timeout of 0 ms would have likely passed by this time since it was declared first and is on the event loop.
+Therefore it will change the order of execution and the timeout operation will happen before the file read and the sequential callback.

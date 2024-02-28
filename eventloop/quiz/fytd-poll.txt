@@ -1,1 +1,3 @@
 - In eventloop/poll.js, what will be the order of execution? Briefly explain the order of execution w.r.t the event loop phases.
+
+First foo is executed on the main loop as well as the console log for "done". Then the callback is invoked that tries to read the file.

@@ -1,1 +1,5 @@
 - In eventloop/timer.js, what will be the order of execution? Briefly explain the order of execution w.r.t the event loop phases.
+
+First the function foo will call baz and set a timeout for bar.
+This hapens twice before the first call of bar (with 2 passed)
+is executed and after the next execution of bar (with 1 passed).
